@@ -12,8 +12,12 @@ public class Main {
     //--------------------------------------------------------------------------
     /** Programa Principal. Crea una instancia de PrimosCirculares, que se encarga
      *  de realizar las operaciones necesarias.
-     * @param args: En el primer argumento se determina si la lista se va a mostrar agrupada
-     *              por cantidad de dígitos o no. Si no dice nada, se muestra como lista.
+     * @param args: En el primer argumento se determinan la cantidad de hilos para
+     *              calcular los primos; si no se escribeo falla, utiliza los que tiene por defecto.
+     *              En el segundo argumento se determina la forma de mostrar el resultado.
+     *              Si dice agrupado, la lista de primos circulares se muetra separada por
+     *              dígitos y se agrupan los números que son rotaciones entre si.
+     *              Si no dice nada, se muestra como lista secuencial ordenada.
      */
     public static void main(String[] args) {
         int cantidadHilos = 4;
@@ -25,7 +29,21 @@ public class Main {
         //Intenta leer la cantidad de hilos. Si no está determinada u ocurre un error, usa los que vienen por defecto.
         if (args.length>0){
             try{
-                agrupado = args[0].equals("agrupado");
+                cantidadHilos = Integer.valueOf(args[0]);
+            } catch(Exception e){
+                cantidadHilos = 4;
+                System.out.println("Error la cantidad de hilos. Se van a calcular los primos circulares usando "+cantidadHilos+" hilos.");
+            }
+        }
+        
+        //Intenta leer la forma en la que se debe mostrar el resultado. Si no está determinada u ocurre un error, muestra como lista.
+        if (args.length>1){
+            try{
+                if(args[1].toLowerCase().equals("agrupado")){
+                    agrupado = true;
+                } else{
+                    System.out.println("Parámetro mal escrito. Se va a mostrar el resultado como lista.");
+                }
             } catch(Exception e){
                 System.out.println("Error al leer el parámetro. Se va a mostrar el resultado como lista.");
             }
