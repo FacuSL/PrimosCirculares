@@ -17,8 +17,8 @@ Descargar el archivo .jar que se encuentra dentro de la carpeta [jar][]. Luego, 
 java -jar PrimosCirculares.jar
 
 El programa además tiene la opción de aceptar dos parámetros:
-1. El primero determina la cantidad de hilos para calcular los primos; por defecto tiene 4.
-2. El segundo determina la forma en la que se debe mostrar el resultado. Si dice "agrupado", la lista de primos circulares se mostrará separada por dígitos, agrupando los números que son rotaciones entre si. Si no dice nada, se muestra como lista secuencial ordenada.
+* El primero determina la cantidad de hilos para calcular los primos; por defecto tiene 4.
+* El segundo determina la forma en la que se debe mostrar el resultado. Si dice "agrupado", la lista de primos circulares se mostrará separada por dígitos, agrupando los números que son rotaciones entre si. Si no dice nada, se muestra como lista secuencial ordenada.
 
 Entonces, si por ejemplo se quiere ejecutar con 2 hilos y mostrar el resultado agrupado por dígitos y rotaciones, se debería escribir:
 
