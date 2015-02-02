@@ -51,7 +51,7 @@ public class PrimosCirculares extends ArrayList<Integer>{
             System.out.println("No puede haber menos de un hilo. Se va a calcular con un hilo.");
             this.cantidadHilos = 1;
         }
-        hilos = new Thread[cantidadHilos];
+        hilos = new Thread[this.cantidadHilos];
         
         //Genera los primos necesarios para nuestros cálculos...................
         generarPrimos(maximo);
@@ -94,6 +94,10 @@ public class PrimosCirculares extends ArrayList<Integer>{
     
     //FUNCIONES PÚBLICAS********************************************************
     
+    //--------------------------------------------------------------------------
+    /** Escribe el listado de primos, uno abajo del otro.
+     * @return (String) listado secuencial de primos circulares
+     */
     @Override
     public String toString(){
         int cantidad = size();
@@ -103,8 +107,14 @@ public class PrimosCirculares extends ArrayList<Integer>{
         }
         return sb.toString();
     }
+    //--------------------------------------------------------------------------
+    
+    
     
     //--------------------------------------------------------------------------
+    /** Escribe el listado separado por dígito agrupnado por rotaciones de cada número.
+     * @return (String) listado de primos circulares
+     */
     public String toStringPorDigitos(){
         StringBuilder sb = new StringBuilder();
         int cantidadDigitos;
